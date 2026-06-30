@@ -1,0 +1,89 @@
+{
+  "hero": {
+    "eyebrow": "Kreativni studio",
+    "headline": "NORIE Studio nastao je iz *ljubavi* prema dizajnu, pričama i ljudima iza njih.",
+    "subtitle": "Dizajn shvaćam kao način da pomognem ljudima jasnije vidjeti sebe i ono što grade.",
+    "ctaPrimary": "Pogledaj rad",
+    "ctaSecondary": "Moje usluge"
+  },
+  "manifesto": {
+    "eyebrow": "( zašto dizajn )",
+    "text": "Dobar dizajn donosi *olakšanje*. Pomaže vam da se jasnije predstavite, da vas prave osobe pronađu i da se osjećate *sigurnije* u ono što gradite."
+  },
+  "servicesBand": {
+    "eyebrow": "Specijalnosti",
+    "heading": "Moje potpisne usluge",
+    "intro": "Slušam prije nego što dizajniram — i pretvaram ideje u dizajn koji povezuje.",
+    "buttonLabel": "Istraži usluge"
+  },
+  "process": {
+    "heading": "Kako radim",
+    "steps": [
+      { "num": "01", "title": "Upoznajem te", "body": "Razgovaram s tobom o tvom poslu, priči i viziji." },
+      { "num": "02", "title": "Tražim jasnoću", "body": "Definiram što želiš reći i kako želiš da se ljudi osjećaju." },
+      { "num": "03", "title": "Dizajniram", "body": "Pretvaram ideje u identitet i web koji djeluju prirodno, lijepo i promišljeno." },
+      { "num": "04", "title": "Lansiram", "body": "Odlaziš s alatom koji ti pomaže rasti i s kojim se osjećaš povezano." }
+    ]
+  },
+  "services": [
+    "Grafički i web dizajn",
+    "Izrada web stranica",
+    "Vizualni identitet",
+    "Brendiranje",
+    "Marketing",
+    "Copywriting"
+  ],
+  "projects": [
+    { "name": "Canva dizajni za društvene mreže", "category": "Društvene mreže", "description": "Vizualni sadržaj za Instagram i druge društvene mreže, izrađen u Canvi." },
+    { "name": "Logo dizajn", "category": "Logo dizajn", "description": "Prepoznatljivi logotipovi koji nose priču brenda." },
+    { "name": "Vizualni identitet", "category": "Vizualni identitet", "description": "Cjeloviti vizualni sustavi: boje, tipografija i grafički elementi." },
+    { "name": "Web stranica", "category": "Web dizajn", "description": "Web stranice dizajnirane s jasnoćom i svrhom." }
+  ],
+  "work": {
+    "intro": "Grafički dizajn, web stranice i vizualni identiteti za brendove i ljude koji žele stvoriti nešto iskreno i dugotrajno."
+  },
+  "servicesPage": {
+    "intro": "Od prve ideje do gotovog identiteta i web doma — svaki projekt pristupam s pažnjom i jasnom svrhom.",
+    "tiers": [
+      { "name": "Grafički dizajn", "description": "Canva dizajni za društvene mreže, logo i ostali grafički materijali.", "price": "Cijena na upit" },
+      { "name": "Vizualni identitet", "description": "Cjeloviti vizualni sustav za brend — boje, tipografija, grafički elementi.", "price": "Cijena na upit" },
+      { "name": "Web stranica", "description": "Dizajn i izrada web stranice prilagođene brendu.", "price": "Cijena na upit" }
+    ],
+    "allServicesHeading": "Sve što pokrivam",
+    "allServicesIntro": "Svaki angažman krojim prema tebi — biraj pojedinačno ili sve zajedno.",
+    "forWhom": "Za brendove koji žele više od lijepog izgleda. Za ljude koji žele stvoriti nešto što će trajati."
+  },
+  "studio": {
+    "bio": [
+      "Bavim se dizajnom godinama. Oduvijek sam voljela stvarati — web stranice, vizualne identitete, lijepe i promišljene digitalne prostore.",
+      "Ali život rijetko ide ravnom linijom. Postala sam majka, prošla kroz velike promjene, krenula ispočetka više puta nego što sam mislila da ću morati. Možda upravo zato danas ne gledam na dizajn kao na ukrašavanje — gledam ga kao način da ljudima pomogne da jasnije vide sebe i ono što grade.",
+      "Privlače me ljudi koji stvaraju nešto iskreno. Ljudi koji razmišljaju duboko. Ljudi kojima je stalo. NORIE Studio nastao je upravo za njih — za brendove koji žele više od lijepog izgleda, za ljude koji žele stvoriti nešto što će trajati."
+    ],
+    "principles": [
+      "Slušam prije nego što dizajniram.",
+      "Tražim bit, a ne trend.",
+      "Stvaram s namjerom, ne iz žurbe.",
+      "Vjerujem da dobar dizajn može donijeti mir i jasnoću."
+    ]
+  },
+  "contact": {
+    "headline": "Ispričaj mi *svoju priču.*",
+    "intro": "Imaš projekt na umu ili samo ideju koja te svrbi? Javi se — odgovaram polako, ali s punom pažnjom.",
+    "email": "studio@norie.studio",
+    "responseTime": "Odgovor unutar 2 radna dana",
+    "location": "Radim daljinski",
+    "instagram": "",
+    "pinterest": "",
+    "linkedin": ""
+  },
+  "cta": {
+    "eyebrow": "Pridruži se iskri",
+    "heading": "Tvoj brend zaslužuje da diše.",
+    "text": "Primam mali broj projekata po sezoni. Javi se rano i osiguraj svoje mjesto."
+  },
+  "footer": {
+    "tagline": "NORIE Studio nastao je iz ljubavi prema dizajnu, pričama i ljudima iza njih.",
+    "journalText": "NORIE Journal istražuje unutarnji svijet. NORIE Studio oblikuje ono što iz njega nastaje.",
+    "copyright": "© 2026 NORIE Studio · Sva prava pridržana."
+  }
+}

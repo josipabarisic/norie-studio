@@ -1,36 +1,28 @@
 (() => {
-  // ===== content data =====
-  // Work categories — replace desc/year/images with your real projects when ready.
-  const projects = [
-    { name: "Canva dizajni za društvene mreže", cat: "Društvene mreže", catKey: "drustvene-mreze", year: "", desc: "Vizualni sadržaj za Instagram i druge društvene mreže, izrađen u Canvi." },
-    { name: "Logo dizajn", cat: "Logo dizajn", catKey: "logo", year: "", desc: "Prepoznatljivi logotipovi koji nose priču brenda." },
-    { name: "Vizualni identitet", cat: "Vizualni identitet", catKey: "identitet", year: "", desc: "Cjeloviti vizualni sustavi: boje, tipografija i grafički elementi." },
-    { name: "Web stranica", cat: "Web dizajn", catKey: "web", year: "", desc: "Web stranice dizajnirane s jasnoćom i svrhom." }
-  ];
-  const services = ["Grafički i web dizajn", "Izrada web stranica", "Vizualni identitet", "Brendiranje", "Marketing", "Copywriting"];
-  const process = [
-    { num: "01", title: "Upoznajem te", body: "Razgovaram s tobom o tvom poslu, priči i viziji." },
-    { num: "02", title: "Tražim jasnoću", body: "Definiram što želiš reći i kako želiš da se ljudi osjećaju." },
-    { num: "03", title: "Dizajniram", body: "Pretvaram ideje u identitet i web koji djeluju prirodno, lijepo i promišljeno." },
-    { num: "04", title: "Lansiram", body: "Odlaziš s alatom koji ti pomaže rasti i s kojim se osjećaš povezano." }
-  ];
-  const principles = [
-    "Slušam prije nego što dizajniram.",
-    "Tražim bit, a ne trend.",
-    "Stvaram s namjerom, ne iz žurbe.",
-    "Vjerujem da dobar dizajn može donijeti mir i jasnoću."
-  ];
-  // Pricing pending — tell me your real packages/prices to replace "Cijena na upit".
-  const tiers = [
-    { no: "No. 1", name: "Grafički dizajn", desc: "Canva dizajni za društvene mreže, logo i ostali grafički materijali.", from: "Cijena na upit", dark: false },
-    { no: "No. 2", name: "Vizualni identitet", desc: "Cjeloviti vizualni sustav za brend — boje, tipografija, grafički elementi.", from: "Cijena na upit", dark: true },
-    { no: "No. 3", name: "Web stranica", desc: "Dizajn i izrada web stranice prilagođene brendu.", from: "Cijena na upit", dark: false }
-  ];
-  const marqueeItems = ["Grafički dizajn", "Web dizajn", "Vizualni identitet", "Brendiranje", "Marketing", "Copywriting"];
-  const catLabel = { "drustvene-mreze": "Društvene mreže", logo: "Logo dizajn", identitet: "Vizualni identitet", web: "Web dizajn" };
-  const forWhomText = "Za brendove koji žele više od lijepog izgleda. Za ljude koji žele stvoriti nešto što će trajati.";
-
+  // Content lives in content/site.json — edit it directly, or via the /admin CMS panel.
+  let content = null;
   let workFilter = null;
+
+  function md(text) {
+    return String(text || "").replace(/\*(.+?)\*/g, "<em>$1</em>");
+  }
+
+  function slugify(text) {
+    return String(text || "")
+      .toLowerCase()
+      .replace(/[čć]/g, "c").replace(/š/g, "s").replace(/ž/g, "z").replace(/đ/g, "dj")
+      .replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+  }
+
+  function setText(id, value) {
+    const el = document.getElementById(id);
+    if (el && value != null) el.textContent = value;
+  }
+
+  function setHTML(id, value) {
+    const el = document.getElementById(id);
+    if (el && value != null) el.innerHTML = md(value);
+  }
 
   // ===== scroll reveal =====
   const revealObserver = "IntersectionObserver" in window
@@ -53,17 +45,71 @@
     els.forEach(el => revealObserver.observe(el));
   }
 
+  // ===== static text =====
+  function renderStaticText() {
+    const c = content;
+    setText("hero-eyebrow", c.hero.eyebrow);
+    setHTML("hero-headline", c.hero.headline);
+    setText("hero-subtitle", c.hero.subtitle);
+    setText("hero-cta-primary", c.hero.ctaPrimary);
+    setText("hero-cta-secondary", c.hero.ctaSecondary);
+
+    setText("manifesto-eyebrow", c.manifesto.eyebrow);
+    setHTML("manifesto-text", c.manifesto.text);
+
+    setText("services-band-eyebrow", c.servicesBand.eyebrow);
+    setText("services-band-heading", c.servicesBand.heading);
+    setText("services-band-intro", c.servicesBand.intro);
+    setText("services-band-btn", c.servicesBand.buttonLabel);
+
+    setText("process-heading", c.process.heading);
+    setText("work-intro", c.work.intro);
+    setText("services-page-intro", c.servicesPage.intro);
+    setText("all-services-heading", c.servicesPage.allServicesHeading);
+    setText("all-services-intro", c.servicesPage.allServicesIntro);
+    setText("industries-text", c.servicesPage.forWhom);
+
+    const bioEl = document.getElementById("studio-bio");
+    bioEl.innerHTML = c.studio.bio.map(p => `<p>${p}</p>`).join("");
+
+    setHTML("contact-headline", c.contact.headline);
+    setText("contact-intro", c.contact.intro);
+    setText("contact-email", c.contact.email);
+    setText("contact-response", c.contact.responseTime);
+    setText("contact-location", c.contact.location);
+    setSocialLinks("contact-socials", c.contact);
+    setSocialLinks("footer-socials", c.contact);
+
+    setText("cta-eyebrow", c.cta.eyebrow);
+    setText("cta-heading", c.cta.heading);
+    setText("cta-text", c.cta.text);
+
+    setText("footer-tagline", c.footer.tagline);
+    setText("footer-journal-text", c.footer.journalText);
+    setText("footer-copyright", c.footer.copyright);
+  }
+
+  function setSocialLinks(containerId, contact) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    const links = container.querySelectorAll(".social-circle");
+    const urls = [contact.instagram, contact.pinterest, contact.linkedin];
+    links.forEach((a, i) => {
+      if (urls[i]) a.href = urls[i];
+    });
+  }
+
   // ===== render: marquee =====
   function renderMarquee() {
     const el = document.getElementById("marquee");
-    const row = marqueeItems.concat(marqueeItems);
+    const row = content.services.concat(content.services);
     el.innerHTML = row.map(t => `<span>${t}</span>`).join("");
   }
 
   // ===== render: featured work (home) =====
   function renderFeaturedWork() {
     const el = document.getElementById("featured-work");
-    const featured = projects.slice(0, 3);
+    const featured = content.projects.slice(0, 3);
     el.innerHTML = featured.map((p, i) => {
       const num = "0" + (i + 1);
       const plc = i === 1 ? "plc-b" : "plc";
@@ -72,9 +118,9 @@
       <button class="work-row ${flip} reveal" data-go="work">
         <div class="thumb ${plc}"></div>
         <div class="info">
-          <div class="work-meta"><span class="num">${num}</span><span class="cat">${p.cat}</span>${p.year ? `<span class="year">${p.year}</span>` : ""}</div>
+          <div class="work-meta"><span class="num">${num}</span><span class="cat">${p.category}</span></div>
           <h3>${p.name}</h3>
-          <p class="desc">${p.desc}</p>
+          <p class="desc">${p.description}</p>
           <span class="cta">Pogledaj studiju <span class="ms" style="font-size:16px;">arrow_forward</span></span>
         </div>
       </button>`;
@@ -85,7 +131,7 @@
   // ===== render: services list (home band) =====
   function renderHomeServices() {
     const el = document.getElementById("home-services-list");
-    el.innerHTML = services.map((s, i) => {
+    el.innerHTML = content.services.map((s, i) => {
       const num = "(" + (i < 9 ? "0" : "") + (i + 1) + ")";
       return `<div class="service-row reveal"><span class="num">${num}</span><span class="name">${s}</span></div>`;
     }).join("");
@@ -95,7 +141,7 @@
   // ===== render: process =====
   function renderProcess() {
     const el = document.getElementById("process-grid");
-    el.innerHTML = process.map(p => `
+    el.innerHTML = content.process.steps.map(p => `
       <div class="process-item reveal">
         <div class="pnum">${p.num}</div>
         <div class="pline"></div>
@@ -108,12 +154,12 @@
   // ===== render: work page (filters + grid) =====
   function renderWorkFilters() {
     const el = document.getElementById("work-filters");
-    const cats = [...new Set(projects.map(p => p.catKey))];
+    const cats = [...new Set(content.projects.map(p => p.category))];
     const allOn = workFilter === null;
     let html = `<button class="btn-pill-sm ${allOn ? "on" : ""}" data-filter="all">Sve</button>`;
-    html += cats.map(k => {
-      const on = workFilter === k;
-      return `<button class="btn-pill-sm ${on ? "on" : ""}" data-filter="${k}">${catLabel[k] || k}</button>`;
+    html += cats.map(cat => {
+      const on = workFilter === cat;
+      return `<button class="btn-pill-sm ${on ? "on" : ""}" data-filter="${slugify(cat)}">${cat}</button>`;
     }).join("");
     el.innerHTML = html;
     el.querySelectorAll("[data-filter]").forEach(btn => {
@@ -128,14 +174,14 @@
 
   function renderWorkGrid() {
     const el = document.getElementById("work-grid");
-    const list = projects.filter(p => !workFilter || p.catKey === workFilter);
+    const list = content.projects.filter(p => !workFilter || slugify(p.category) === workFilter);
     el.innerHTML = list.map((p, i) => {
       const plc = i % 3 === 1 ? "plc-b" : "plc";
       return `
       <div class="work-card reveal">
-        <div class="thumb ${plc}"><span class="tag">${p.cat}</span></div>
-        <div class="work-card-meta"><h3>${p.name}</h3>${p.year ? `<span class="year">${p.year}</span>` : ""}</div>
-        <p class="desc">${p.desc}</p>
+        <div class="thumb ${plc}"><span class="tag">${p.category}</span></div>
+        <div class="work-card-meta"><h3>${p.name}</h3></div>
+        <p class="desc">${p.description}</p>
       </div>`;
     }).join("");
     observeReveals(el);
@@ -144,33 +190,32 @@
   // ===== render: services page =====
   function renderTiers() {
     const el = document.getElementById("tiers");
-    el.innerHTML = tiers.map(t => `
-      <div class="tier ${t.dark ? "dark" : "light"} reveal">
-        <div class="no">${t.no}</div>
+    el.innerHTML = content.servicesPage.tiers.map((t, i) => {
+      const dark = i === 1;
+      return `
+      <div class="tier ${dark ? "dark" : "light"} reveal">
+        <div class="no">No. ${i + 1}</div>
         <h3>${t.name}</h3>
-        <p class="desc">${t.desc}</p>
-        <div class="from">${t.from}</div>
+        <p class="desc">${t.description}</p>
+        <div class="from">${t.price}</div>
         <button class="btn" data-go="contact">Upitaj</button>
-      </div>`).join("");
+      </div>`;
+    }).join("");
     observeReveals(el);
   }
 
   function renderAllServices() {
     const el = document.getElementById("all-services-grid");
-    el.innerHTML = services.map((s, i) => {
+    el.innerHTML = content.services.map((s, i) => {
       const num = "(" + (i < 9 ? "0" : "") + (i + 1) + ")";
       return `<div class="service-row-sm"><span class="num">${num}</span><span class="name">${s}</span></div>`;
     }).join("");
   }
 
-  function renderIndustries() {
-    document.getElementById("industries-text").textContent = forWhomText;
-  }
-
   // ===== render: studio page =====
   function renderValues() {
     const el = document.getElementById("values-grid");
-    el.innerHTML = principles.map(p => `<p class="principle-line reveal">${p}</p>`).join("");
+    el.innerHTML = content.studio.principles.map(p => `<p class="principle-line reveal">${p}</p>`).join("");
     observeReveals(el);
   }
 
@@ -222,7 +267,8 @@
   }
 
   // ===== init =====
-  function init() {
+  function render() {
+    renderStaticText();
     renderMarquee();
     renderFeaturedWork();
     renderHomeServices();
@@ -231,13 +277,18 @@
     renderWorkGrid();
     renderTiers();
     renderAllServices();
-    renderIndustries();
     renderValues();
     wireNav();
     wireForms();
     observeReveals(document);
     const startPage = (location.hash || "").replace("#", "") || "home";
     goPage(startPage);
+  }
+
+  async function init() {
+    const res = await fetch("content/site.json", { cache: "no-cache" });
+    content = await res.json();
+    render();
   }
 
   document.addEventListener("DOMContentLoaded", init);

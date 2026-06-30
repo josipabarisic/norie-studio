@@ -1,2 +1,5 @@
 .DS_Store
 Norie Studio.html
+
+# Local Netlify folder
+.netlify
