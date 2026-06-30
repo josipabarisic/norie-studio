@@ -32,6 +32,27 @@
 
   let workFilter = null;
 
+  // ===== scroll reveal =====
+  const revealObserver = "IntersectionObserver" in window
+    ? new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" })
+    : null;
+
+  function observeReveals(root) {
+    const els = root.querySelectorAll(".reveal:not(.in)");
+    if (!revealObserver) {
+      els.forEach(el => el.classList.add("in"));
+      return;
+    }
+    els.forEach(el => revealObserver.observe(el));
+  }
+
   // ===== render: marquee =====
   function renderMarquee() {
     const el = document.getElementById("marquee");
@@ -48,7 +69,7 @@
       const plc = i === 1 ? "plc-b" : "plc";
       const flip = i % 2 === 0 ? "" : "flip";
       return `
-      <button class="work-row ${flip}" data-go="work">
+      <button class="work-row ${flip} reveal" data-go="work">
         <div class="thumb ${plc}"></div>
         <div class="info">
           <div class="work-meta"><span class="num">${num}</span><span class="cat">${p.cat}</span>${p.year ? `<span class="year">${p.year}</span>` : ""}</div>
@@ -58,6 +79,7 @@
         </div>
       </button>`;
     }).join("");
+    observeReveals(el);
   }
 
   // ===== render: services list (home band) =====
@@ -65,20 +87,22 @@
     const el = document.getElementById("home-services-list");
     el.innerHTML = services.map((s, i) => {
       const num = "(" + (i < 9 ? "0" : "") + (i + 1) + ")";
-      return `<div class="service-row"><span class="num">${num}</span><span class="name">${s}</span></div>`;
+      return `<div class="service-row reveal"><span class="num">${num}</span><span class="name">${s}</span></div>`;
     }).join("");
+    observeReveals(el);
   }
 
   // ===== render: process =====
   function renderProcess() {
     const el = document.getElementById("process-grid");
     el.innerHTML = process.map(p => `
-      <div class="process-item">
+      <div class="process-item reveal">
         <div class="pnum">${p.num}</div>
         <div class="pline"></div>
         <h3>${p.title}</h3>
         <p>${p.body}</p>
       </div>`).join("");
+    observeReveals(el);
   }
 
   // ===== render: work page (filters + grid) =====
@@ -108,25 +132,27 @@
     el.innerHTML = list.map((p, i) => {
       const plc = i % 3 === 1 ? "plc-b" : "plc";
       return `
-      <div class="work-card">
+      <div class="work-card reveal">
         <div class="thumb ${plc}"><span class="tag">${p.cat}</span></div>
         <div class="work-card-meta"><h3>${p.name}</h3>${p.year ? `<span class="year">${p.year}</span>` : ""}</div>
         <p class="desc">${p.desc}</p>
       </div>`;
     }).join("");
+    observeReveals(el);
   }
 
   // ===== render: services page =====
   function renderTiers() {
     const el = document.getElementById("tiers");
     el.innerHTML = tiers.map(t => `
-      <div class="tier ${t.dark ? "dark" : "light"}">
+      <div class="tier ${t.dark ? "dark" : "light"} reveal">
         <div class="no">${t.no}</div>
         <h3>${t.name}</h3>
         <p class="desc">${t.desc}</p>
         <div class="from">${t.from}</div>
         <button class="btn" data-go="contact">Upitaj</button>
       </div>`).join("");
+    observeReveals(el);
   }
 
   function renderAllServices() {
@@ -144,16 +170,25 @@
   // ===== render: studio page =====
   function renderValues() {
     const el = document.getElementById("values-grid");
-    el.innerHTML = principles.map(p => `<p class="principle-line">${p}</p>`).join("");
+    el.innerHTML = principles.map(p => `<p class="principle-line reveal">${p}</p>`).join("");
+    observeReveals(el);
   }
 
   // ===== page navigation =====
   const pages = ["home", "work", "services", "studio", "contact"];
   function goPage(id) {
     if (!pages.includes(id)) id = "home";
-    pages.forEach(p => {
-      document.getElementById("page-" + p).classList.toggle("active", p === id);
-    });
+    const next = document.getElementById("page-" + id);
+    const current = document.querySelector(".page.active");
+
+    if (current && current !== next) {
+      current.classList.remove("show");
+      setTimeout(() => current.classList.remove("active"), 450);
+    }
+    next.classList.add("active");
+    requestAnimationFrame(() => requestAnimationFrame(() => next.classList.add("show")));
+    observeReveals(next);
+
     document.querySelectorAll(".nav-link").forEach(btn => {
       btn.classList.toggle("active", btn.getAttribute("data-go") === id);
     });
@@ -200,6 +235,7 @@
     renderValues();
     wireNav();
     wireForms();
+    observeReveals(document);
     const startPage = (location.hash || "").replace("#", "") || "home";
     goPage(startPage);
   }
