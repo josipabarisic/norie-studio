@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NORIE Studio — Dizajn s namjerom</title>
+<meta name="description" content="NORIE Studio nastao je iz ljubavi prema dizajnu, pričama i ljudima iza njih.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,300,0,0&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<div style="position:relative;z-index:10;min-height:100vh;">
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <button class="brand" data-go="home">
+      <span class="brand-name">Norie</span>
+      <span class="brand-sub">Studio</span>
+    </button>
+    <nav class="nav-links">
+      <button class="nav-link" data-go="home">Početna</button>
+      <button class="nav-link" data-go="work">Rad</button>
+      <button class="nav-link" data-go="services">Usluge</button>
+      <button class="nav-link" data-go="studio">Studio</button>
+      <button class="nav-link" data-go="contact">Kontakt</button>
+    </nav>
+    <button class="btn-cta-nav" data-go="contact">Započni projekt</button>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ================= HOME ================= -->
+<section class="page" id="page-home">
+
+  <div class="hero">
+    <div>
+      <div class="hero-eyebrow"><span class="line"></span><span class="eyebrow-text">Kreativni studio</span></div>
+      <h1>NORIE Studio nastao je iz <span style="font-style:italic;">ljubavi</span> prema dizajnu, pričama i ljudima iza njih.</h1>
+      <p>Dizajn shvaćam kao način da pomognem ljudima jasnije vidjeti sebe i ono što grade.</p>
+      <div class="hero-actions">
+        <button class="btn btn-dark" data-go="work">Pogledaj rad →</button>
+        <button class="btn btn-outline" data-go="services">Moje usluge</button>
+      </div>
+    </div>
+    <div class="hero-art plc-b">
+      <div class="hero-art-inner">
+        <div class="breathe-1"></div>
+        <div class="breathe-2"></div>
+        <span class="hero-art-label">Norie</span>
+      </div>
+      <span class="hero-art-caption">studijska fotografija</span>
+    </div>
+  </div>
+
+  <div class="marquee-wrap">
+    <div class="marquee" id="marquee"></div>
+  </div>
+
+  <div class="manifesto">
+    <span class="eyebrow-text">( zašto dizajn )</span>
+    <p>Dobar dizajn donosi <span style="font-style:italic;">olakšanje</span>. Pomaže vam da se jasnije predstavite, da vas prave osobe pronađu i da se osjećate <span style="font-style:italic;">sigurnije</span> u ono što gradite.</p>
+  </div>
+
+  <div class="section-head">
+    <div><span class="eyebrow-text">Odabrani rad</span><h2>Naš portfelj</h2></div>
+    <button class="link-plain" data-go="work">Sve studije →</button>
+  </div>
+  <div class="work-list" id="featured-work"></div>
+
+  <div class="services-band">
+    <div class="services-band-grid">
+      <div>
+        <span class="eyebrow-text">Specijalnosti</span>
+        <h2>Naše potpisne usluge</h2>
+        <p>Slušam prije nego što dizajniram — i pretvaram ideje u dizajn koji povezuje.</p>
+        <button class="btn btn-dark" data-go="services" style="padding:13px 28px;font-size:13px;text-transform:uppercase;">Istraži usluge</button>
+      </div>
+      <div id="home-services-list"></div>
+    </div>
+  </div>
+
+  <div class="process-section">
+    <div class="process-head"><span class="eyebrow-text">Pristup</span><h2>Kako radim</h2></div>
+    <div class="process-grid" id="process-grid"></div>
+  </div>
+
+
+</section>
+
+<!-- ================= WORK ================= -->
+<section class="page" id="page-work">
+  <div class="page-head">
+    <span class="eyebrow-text">Portfelj</span>
+    <h1>Naš rad</h1>
+    <p>Grafički dizajn, web stranice i vizualni identiteti za brendove i ljude koji žele stvoriti nešto iskreno i dugotrajno.</p>
+    <div class="filters" id="work-filters"></div>
+  </div>
+  <div class="work-grid" id="work-grid"></div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="page" id="page-services">
+  <div class="page-head">
+    <span class="eyebrow-text">Usluge</span>
+    <h1>Što radim</h1>
+    <p>Od prve ideje do gotovog identiteta i web doma — svaki projekt pristupam s pažnjom i jasnom svrhom.</p>
+  </div>
+  <div class="tiers" id="tiers"></div>
+  <div class="all-services">
+    <h2>Sve što pokrivam</h2>
+    <p>Svaki angažman krojim prema tebi — biraj pojedinačno ili sve zajedno.</p>
+    <div class="all-services-grid" id="all-services-grid"></div>
+  </div>
+  <div class="industries-band">
+    <span class="eyebrow-text">Za koga radim</span>
+    <p id="industries-text"></p>
+  </div>
+</section>
+
+<!-- ================= STUDIO ================= -->
+<section class="page" id="page-studio">
+  <div class="studio-head">
+    <span class="eyebrow-text">O meni</span>
+    <h1>Dizajn s namjerom, izrađen u tišini.</h1>
+  </div>
+  <div class="studio-grid">
+    <div class="studio-img plc"></div>
+    <div class="studio-copy">
+      <p>Bavim se dizajnom godinama. Oduvijek sam voljela stvarati — web stranice, vizualne identitete, lijepe i promišljene digitalne prostore.</p>
+      <p>Ali život rijetko ide ravnom linijom. Postala sam majka, prošla kroz velike promjene, krenula ispočetka više puta nego što sam mislila da ću morati. Možda upravo zato danas ne gledam na dizajn kao na ukrašavanje — gledam ga kao način da ljudima pomogne da jasnije vide sebe i ono što grade.</p>
+      <p>Privlače me ljudi koji stvaraju nešto iskreno. Ljudi koji razmišljaju duboko. Ljudi kojima je stalo. NORIE Studio nastao je upravo za njih — za brendove koji žele više od lijepog izgleda, za ljude koji žele stvoriti nešto što će trajati.</p>
+    </div>
+  </div>
+  <div class="values-section">
+    <span class="eyebrow-text">Pristup</span>
+    <div class="values-grid" id="values-grid"></div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="page" id="page-contact">
+  <div class="contact-grid">
+    <div>
+      <span class="eyebrow-text">Kontakt</span>
+      <h1>Ispričaj mi<br><span style="font-style:italic;">svoju priču.</span></h1>
+      <p>Imaš projekt na umu ili samo ideju koja te svrbi? Javi se — odgovaram polako, ali s punom pažnjom.</p>
+      <div class="contact-info">
+        <div class="row"><span class="ms" style="font-size:20px;color:#666;">mail</span><span class="txt">studio@norie.studio</span></div>
+        <div class="row"><span class="ms" style="font-size:20px;color:#666;">schedule</span><span class="txt">Odgovor unutar 2 radna dana</span></div>
+        <div class="row"><span class="ms" style="font-size:20px;color:#666;">place</span><span class="txt">Radim daljinski</span></div>
+      </div>
+      <div class="social-row">
+        <a href="#" class="social-circle">Ig</a>
+        <a href="#" class="social-circle">Pin</a>
+        <a href="#" class="social-circle">in</a>
+      </div>
+    </div>
+    <form class="contact-form" id="contact-form">
+      <div class="form-row2">
+        <div class="field"><label>Ime</label><input name="name" placeholder="Tvoje ime" required></div>
+        <div class="field"><label>Email</label><input name="email" type="email" placeholder="tvoj@email.com" required></div>
+      </div>
+      <div class="field"><label>Tip projekta</label><input name="project" placeholder="Vizualni identitet, web…"></div>
+      <div class="field"><label>O projektu</label><textarea name="message" placeholder="Ispričaj mi priču svog brenda…"></textarea></div>
+      <button type="submit" class="btn btn-dark" style="align-self:flex-start;">Pošalji upit →</button>
+      <p class="form-note" id="form-note">Hvala! Javit ću se uskoro.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= CTA ================= -->
+<div class="wrap" id="cta-wrap">
+  <div class="cta-band">
+    <span class="eyebrow">Pridruži se iskri</span>
+    <h2>Tvoj brend zaslužuje da diše.</h2>
+    <p>Primam mali broj projekata po sezoni. Javi se rano i osiguraj svoje mjesto.</p>
+    <button class="btn btn-light" data-go="contact">Započni projekt →</button>
+  </div>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col" style="min-width:220px;">
+        <div class="footer-brand"><span class="name">Norie</span><span class="sub">Studio</span></div>
+        <p>NORIE Studio nastao je iz ljubavi prema dizajnu, pričama i ljudima iza njih.</p>
+        <div class="social-row" style="margin-top:0;">
+          <a href="#" class="social-circle" style="width:38px;height:38px;">Ig</a>
+          <a href="#" class="social-circle" style="width:38px;height:38px;">Pin</a>
+          <a href="#" class="social-circle" style="width:38px;height:38px;">in</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Studio</div>
+        <div class="footer-links">
+          <button class="footer-link" data-go="work">Rad</button>
+          <button class="footer-link" data-go="services">Usluge</button>
+          <button class="footer-link" data-go="studio">O studiju</button>
+          <button class="footer-link" data-go="contact">Kontakt</button>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Suradnja</div>
+        <div class="footer-links">
+          <button class="footer-link" data-go="contact">Upit za projekt</button>
+          <button class="footer-link" data-go="services">Cjenik i paketi</button>
+          <button class="footer-link" data-go="contact">Klijentski portal</button>
+          <button class="footer-link" data-go="contact">Česta pitanja</button>
+        </div>
+      </div>
+      <div class="newsletter-box">
+        <div class="footer-heading" style="margin-bottom:10px;">NORIE Journal</div>
+        <p>NORIE Journal istražuje unutarnji svijet. NORIE Studio oblikuje ono što iz njega nastaje.</p>
+        <form class="newsletter-form" id="newsletter-form">
+          <input type="email" placeholder="tvoj@email.com" required>
+          <button type="submit">Pretplati se</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 NORIE Studio · Sva prava pridržana.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privatnost</a>
+        <a href="#">Uvjeti</a>
+        <span class="lang-tag"><span class="ms" style="font-size:16px;">language</span>Hrvatski (HR)</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
