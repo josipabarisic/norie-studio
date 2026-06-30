@@ -1,6 +1,8 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: josipabarisic/norie-studio
   branch: main
+  base_url: https://api.netlify.com
 
 media_folder: "assets/img/uploads"
 public_folder: "/assets/img/uploads"
