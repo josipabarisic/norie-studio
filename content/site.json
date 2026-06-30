@@ -8,21 +8,21 @@
   },
   "manifesto": {
     "eyebrow": "Moja ljubav prema dizajnu",
-    "text": "Dobar dizajn spaja viziju i jasnoću."
+    "text": "Volim postavljati pitanja, tražiti bit i stvarati brendove koji djeluju mirno, promišljeno i svoje."
   },
   "servicesBand": {
-    "eyebrow": "Specijalnosti",
-    "heading": "Moje potpisne usluge",
-    "intro": "Slušam prije nego što dizajniram — i pretvaram ideje u dizajn koji povezuje.",
+    "eyebrow": "Kako ti mogu pomoći",
+    "heading": "Sve ono što nosiš u glavi, pretvaramo u nešto što ljudi mogu vidjeti i osjetiti.",
+    "intro": "Prije nego što krenem, želim razumjeti što gradiš i zašto ti je to važno. Ostatak je dizajn.",
     "buttonLabel": "Istraži usluge"
   },
   "process": {
     "heading": "Kako radim",
     "steps": [
-      { "num": "01", "title": "Upoznajem te", "body": "Razgovaram s tobom o tvom poslu, priči i viziji." },
-      { "num": "02", "title": "Tražim jasnoću", "body": "Definiram što želiš reći i kako želiš da se ljudi osjećaju." },
-      { "num": "03", "title": "Dizajniram", "body": "Pretvaram ideje u identitet i web koji djeluju prirodno, lijepo i promišljeno." },
-      { "num": "04", "title": "Lansiram", "body": "Odlaziš s alatom koji ti pomaže rasti i s kojim se osjećaš povezano." }
+      { "num": "01", "title": "Upoznajemo se", "body": "Pričamo o tvom poslu, idejama i svim onim rečenicama koje počinju s „Ne znam kako ovo objasniti…“." },
+      { "num": "02", "title": "Tražimo jasnoću", "body": "Izdvajamo što je važno, što želiš reći i kako želiš da se ljudi osjećaju kada dođu u kontakt s tvojim brendom." },
+      { "num": "03", "title": "Oblikujemo", "body": "Ideje dobivaju oblik kroz identitet, web stranicu i riječi." },
+      { "num": "04", "title": "Lansiramo", "body": "Odlaziš s brendom koji ti pomaže rasti i s kojim se osjećaš povezano." }
     ]
   },
   "services": [
