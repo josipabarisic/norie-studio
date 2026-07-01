@@ -113,10 +113,13 @@
       const num = "0" + (i + 1);
       const plc = i === 1 ? "plc-b" : "plc";
       const flip = i % 2 === 0 ? "" : "flip";
-      const thumbStyle = p.image ? ` style="background-image:url('${p.image}');background-size:cover;background-position:center;"` : "";
+      const thumbInner = p.image
+        ? `<img src="${p.image}" alt="${p.name}" style="width:100%;height:100%;object-fit:contain;display:block;">`
+        : "";
+      const thumbStyle = p.image ? ` style="aspect-ratio:2/3;background:#F5F3F3;"` : "";
       return `
       <button class="work-row ${flip} reveal" data-go="work">
-        <div class="thumb ${p.image ? "" : plc}"${thumbStyle}></div>
+        <div class="thumb ${p.image ? "" : plc}"${thumbStyle}>${thumbInner}</div>
         <div class="info">
           <div class="work-meta"><span class="num">${num}</span><span class="cat">${p.category}</span></div>
           <h3>${p.name}</h3>
@@ -177,10 +180,13 @@
     const list = content.projects.filter(p => !workFilter || slugify(p.category) === workFilter);
     el.innerHTML = list.map((p, i) => {
       const plc = i % 3 === 1 ? "plc-b" : "plc";
-      const thumbStyle = p.image ? ` style="background-image:url('${p.image}');background-size:cover;background-position:center;"` : "";
+      const thumbInner = p.image
+        ? `<img src="${p.image}" alt="${p.name}" style="width:100%;height:100%;object-fit:contain;display:block;">`
+        : "";
+      const thumbStyle = p.image ? ` style="aspect-ratio:2/3;background:#F5F3F3;"` : "";
       return `
       <div class="work-card reveal">
-        <div class="thumb ${p.image ? "" : plc}"${thumbStyle}><span class="tag">${p.category}</span></div>
+        <div class="thumb ${p.image ? "" : plc}"${thumbStyle}><span class="tag">${p.category}</span>${thumbInner}</div>
         <div class="work-card-meta"><h3>${p.name}</h3></div>
         <p class="desc">${p.description}</p>
       </div>`;

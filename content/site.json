@@ -38,7 +38,7 @@
     { "name": "Logo dizajn", "category": "Logo dizajn", "description": "Prepoznatljivi logotipovi koji nose priču brenda." },
     { "name": "Vizualni identitet", "category": "Vizualni identitet", "description": "Cjeloviti vizualni sustavi: boje, tipografija i grafički elementi." },
     { "name": "Web stranica", "category": "Web dizajn", "description": "Web stranice dizajnirane s jasnoćom i svrhom." },
-    { "name": "Paleta boja – edukacijski centar", "category": "Vizualni identitet", "description": "Topla, prirodna paleta boja i moodboard za brend edukacijskog centra.", "image": "assets/img/moodboard-edukacijski-centar.jpg" }
+    { "name": "Primjer isplaniranja palete boja za edukacijski centar", "category": "Vizualni identitet", "description": "Topla, prirodna paleta boja i moodboard za brend edukacijskog centra.", "image": "assets/img/moodboard-edukacijski-centar.jpg" }
   ],
   "work": {
     "intro": "Grafički dizajn, web stranice i vizualni identiteti za brendove koji žele zvučati iskreno i ostati u sjećanju."
