@@ -1,5 +1,10 @@
 .DS_Store
 Norie Studio.html
-
-# Local Netlify folder
 .netlify
+
+# Raw source photos in root (use assets/img/ for web-ready images)
+/*.png
+/*.jpg
+/*.jpeg
+/*.webp
+Compressed*.png
