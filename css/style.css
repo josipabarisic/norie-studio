@@ -213,12 +213,12 @@ footer{border-top:0.5px solid #D1D1D1;margin-top:80px;background:#F5F3F3;}
 .footer-links{display:flex;flex-direction:column;gap:12px;align-items:flex-start;}
 .footer-link{background:none;border:none;cursor:pointer;font-size:15px;color:#666;padding:0;text-decoration:none;transition:color .2s;}
 .footer-link:hover{color:#1A1A1A;}
-.newsletter-box{background:#FBF9F8;border:1px solid rgba(209,209,209,0.5);border-radius:16px;padding:24px;min-width:220px;}
+.newsletter-box{background:#EDF1F3;border:1px solid rgba(209,209,209,0.75);border-radius:16px;padding:24px;min-width:220px;box-shadow:0 1px 0 rgba(26,26,26,0.03);}
 .newsletter-box p{font-size:14px;line-height:1.6;color:#666;margin:0 0 16px;}
 .newsletter-form{display:flex;flex-direction:column;gap:10px;}
-.newsletter-form input{background:#fff;border:1px solid #D1D1D1;border-radius:999px;padding:11px 16px;font-size:13px;transition:border-color .2s;}
+.newsletter-form input{background:#fff;border:1px solid #D1D1D1;border-radius:999px;padding:11px 16px;font-size:13px;transition:border-color .2s;width:100%;box-sizing:border-box;}
 .newsletter-form input:focus{border-color:#1A1A1A;}
-.newsletter-form button{background:#1A1A1A;color:#fff;border:none;cursor:pointer;border-radius:999px;padding:11px;font-size:13px;font-weight:500;transition:opacity .2s;}
+.newsletter-form button{background:#1A1A1A;color:#fff;border:none;cursor:pointer;border-radius:999px;padding:11px;font-size:13px;font-weight:500;transition:opacity .2s;width:100%;}
 .newsletter-form button:hover{opacity:.88}
 .footer-bottom{border-top:0.5px solid #D1D1D1;padding:24px 0 40px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;}
 .footer-bottom p{font-size:12px;color:#999;margin:0;}
@@ -240,7 +240,10 @@ footer{border-top:0.5px solid #D1D1D1;margin-top:80px;background:#F5F3F3;}
   .services-band-grid{grid-template-columns:1fr;}
   .studio-grid{grid-template-columns:1fr;}
   .contact-grid{grid-template-columns:1fr;padding:48px 0;}
-  .footer-grid{grid-template-columns:1fr 1fr;}
+  .footer-grid{grid-template-columns:1fr;gap:28px 0;padding:48px 0 32px;}
+  .newsletter-box{grid-column:1 / -1;min-width:0;width:100%;padding:20px;}
+  .newsletter-form{display:flex;flex-direction:column;gap:8px;}
+  .newsletter-box p{margin:0 0 12px;}
   .page-head h1{font-size:42px;}
   .studio-head h1{font-size:42px;}
   .contact-grid h1{font-size:42px;}

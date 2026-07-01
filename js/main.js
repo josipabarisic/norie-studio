@@ -92,9 +92,8 @@
   function setSocialLinks(containerId, contact) {
     const container = document.getElementById(containerId);
     if (!container) return;
-    const links = container.querySelectorAll(".social-circle");
     const urls = [contact.instagram, contact.pinterest, contact.linkedin];
-    links.forEach((a, i) => {
+    container.querySelectorAll(".social-circle").forEach((a, i) => {
       if (urls[i]) a.href = urls[i];
     });
   }
@@ -114,9 +113,10 @@
       const num = "0" + (i + 1);
       const plc = i === 1 ? "plc-b" : "plc";
       const flip = i % 2 === 0 ? "" : "flip";
+      const thumbStyle = p.image ? ` style="background-image:url('${p.image}');background-size:cover;background-position:center;"` : "";
       return `
       <button class="work-row ${flip} reveal" data-go="work">
-        <div class="thumb ${plc}"></div>
+        <div class="thumb ${p.image ? "" : plc}"${thumbStyle}></div>
         <div class="info">
           <div class="work-meta"><span class="num">${num}</span><span class="cat">${p.category}</span></div>
           <h3>${p.name}</h3>
@@ -177,9 +177,10 @@
     const list = content.projects.filter(p => !workFilter || slugify(p.category) === workFilter);
     el.innerHTML = list.map((p, i) => {
       const plc = i % 3 === 1 ? "plc-b" : "plc";
+      const thumbStyle = p.image ? ` style="background-image:url('${p.image}');background-size:cover;background-position:center;"` : "";
       return `
       <div class="work-card reveal">
-        <div class="thumb ${plc}"><span class="tag">${p.category}</span></div>
+        <div class="thumb ${p.image ? "" : plc}"${thumbStyle}><span class="tag">${p.category}</span></div>
         <div class="work-card-meta"><h3>${p.name}</h3></div>
         <p class="desc">${p.description}</p>
       </div>`;
@@ -251,7 +252,7 @@
     });
   }
 
-  // ===== forms (no backend wired yet — see README) =====
+  // ===== forms =====
   function wireForms() {
     const contactForm = document.getElementById("contact-form");
     contactForm.addEventListener("submit", (e) => {

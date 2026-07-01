@@ -1,28 +1,28 @@
 {
   "hero": {
     "eyebrow": "NORIE Creative Studio",
-    "headline": "Ponekad ne trebaš novi početak. Trebaš način da jasnije pokažeš ono što već postoji.",
-    "subtitle": "Pomažem pretvoriti tvoj ideje i viziju u brend koji govori ono što već dugo pokušavaš reći.",
+    "headline": "Ponekad ne trebaš novi početak. Trebaš prostor da se ono što već osjećaš vrati u jasnu formu.",
+    "subtitle": "Pomažem ti da ideje, vrijednosti i vizija dobiju oblik koji je tih, jasan i stvarno tvoj.",
     "ctaPrimary": "Moj Portfolio",
     "ctaSecondary": "Moje usluge"
   },
   "manifesto": {
     "eyebrow": "Moja ljubav prema dizajnu",
-    "text": "Volim postavljati pitanja, tražiti bit i stvarati brendove koji djeluju mirno, promišljeno i svoje."
+    "text": "Volim tražiti bit, pa je pretvarati u brend koji ne previše govori, nego ostaje u sjećanju."
   },
   "servicesBand": {
     "eyebrow": "Kako ti mogu pomoći",
-    "heading": "Sve ono što nosiš u glavi, pretvaramo u nešto što ljudi mogu vidjeti i osjetiti.",
-    "intro": "Prije nego što krenem, želim razumjeti što gradiš i zašto ti je to važno. Ostatak je dizajn.",
+    "heading": "Sve što nosiš u glavi može dobiti oblik koji drugi mogu jasno vidjeti.",
+    "intro": "Prije svega slušam. Onda gradimo ono što treba biti tiho, promišljeno i lako prepoznatljivo.",
     "buttonLabel": "Istraži usluge"
   },
   "process": {
     "heading": "Kako radim",
     "steps": [
-      { "num": "01", "title": "Upoznajemo se", "body": "Pričamo o tvom poslu, idejama i svim onim rečenicama koje počinju s „Ne znam kako ovo objasniti…“." },
-      { "num": "02", "title": "Tražimo jasnoću", "body": "Izdvajamo što je važno, što želiš reći i kako želiš da se ljudi osjećaju kada dođu u kontakt s tvojim brendom." },
-      { "num": "03", "title": "Oblikujemo", "body": "Ideje dobivaju oblik kroz identitet, web stranicu i riječi." },
-      { "num": "04", "title": "Lansiramo", "body": "Odlaziš s brendom koji ti pomaže rasti i s kojim se osjećaš povezano." }
+      { "num": "01", "title": "Upoznajemo se", "body": "Pričamo o tome što gradiš, što želiš da ljudi osjete i zašto ti je to važno." },
+      { "num": "02", "title": "Tražimo jasnoću", "body": "Izdvajamo bit, oblikujemo poruku i usklađujemo je s tvojim brendom." },
+      { "num": "03", "title": "Oblikujemo", "body": "Ideje dobivaju oblik kroz identitet, web stranicu i riječi koje ostaju u sjećanju." },
+      { "num": "04", "title": "Lansiramo", "body": "Na kraju dobivaš brend s kojim se lakše krećeš naprijed." }
     ]
   },
   "services": [
@@ -37,27 +37,28 @@
     { "name": "Canva dizajni za društvene mreže", "category": "Društvene mreže", "description": "Vizualni sadržaj za Instagram i druge društvene mreže, izrađen u Canvi." },
     { "name": "Logo dizajn", "category": "Logo dizajn", "description": "Prepoznatljivi logotipovi koji nose priču brenda." },
     { "name": "Vizualni identitet", "category": "Vizualni identitet", "description": "Cjeloviti vizualni sustavi: boje, tipografija i grafički elementi." },
-    { "name": "Web stranica", "category": "Web dizajn", "description": "Web stranice dizajnirane s jasnoćom i svrhom." }
+    { "name": "Web stranica", "category": "Web dizajn", "description": "Web stranice dizajnirane s jasnoćom i svrhom." },
+    { "name": "Paleta boja – edukacijski centar", "category": "Vizualni identitet", "description": "Topla, prirodna paleta boja i moodboard za brend edukacijskog centra.", "image": "assets/img/moodboard-edukacijski-centar.jpg" }
   ],
   "work": {
-    "intro": "Grafički dizajn, web stranice i vizualni identiteti za brendove i ljude koji žele stvoriti nešto iskreno i dugotrajno."
+    "intro": "Grafički dizajn, web stranice i vizualni identiteti za brendove koji žele zvučati iskreno i ostati u sjećanju."
   },
   "servicesPage": {
-    "intro": "Od prve ideje do gotovog identiteta i web doma — svaki projekt pristupam s pažnjom i jasnom svrhom.",
+    "intro": "Od prve ideje do gotovog identiteta i web doma — svaki projekt pristupam s pažnjom, tišinom i jasnom svrhom.",
     "tiers": [
-      { "name": "Grafički dizajn", "description": "Canva dizajni za društvene mreže, logo i ostali grafički materijali.", "price": "Cijena na upit" },
-      { "name": "Vizualni identitet", "description": "Cjeloviti vizualni sustav za brend — boje, tipografija, grafički elementi.", "price": "Cijena na upit" },
-      { "name": "Web stranica", "description": "Dizajn i izrada web stranice prilagođene brendu.", "price": "Cijena na upit" }
+      { "name": "Grafički dizajn", "description": "Canva dizajni za društvene mreže, logo i ostale grafičke materijale koji ti pomažu da se prepoznaš.", "price": "Cijena na upit" },
+      { "name": "Vizualni identitet", "description": "Cjeloviti vizualni sustav za brend — boje, tipografija i elementi koji počivaju na istom glasu.", "price": "Cijena na upit" },
+      { "name": "Web stranica", "description": "Dizajn i izrada web stranice prilagođene brendu, kako bi se lakše prepoznala i zadržala pažnja.", "price": "Cijena na upit" }
     ],
     "allServicesHeading": "Sve što pokrivam",
-    "allServicesIntro": "Svaki angažman krojim prema tebi — biraj pojedinačno ili sve zajedno.",
-    "forWhom": "Za brendove koji žele više od lijepog izgleda. Za ljude koji žele stvoriti nešto što će trajati."
+    "allServicesIntro": "Svaki angažman krojim prema tebi — biraj pojedinačno ili sve zajedno, ovisno što ti u tom trenutku treba.",
+    "forWhom": "Za brendove i ljude koji žele više od lijepog izgleda. Za one koji žele da njihov rad zvuči iskreno i ostane."
   },
   "studio": {
     "bio": [
-      "Bavim se dizajnom godinama. Oduvijek sam voljela stvarati — web stranice, vizualne identitete, lijepe i promišljene digitalne prostore.",
-      "Ali život rijetko ide ravnom linijom. Postala sam majka, prošla kroz velike promjene, krenula ispočetka više puta nego što sam mislila da ću morati. Možda upravo zato danas ne gledam na dizajn kao na ukrašavanje — gledam ga kao način da ljudima pomogne da jasnije vide sebe i ono što grade.",
-      "Privlače me ljudi koji stvaraju nešto iskreno. Ljudi koji razmišljaju duboko. Ljudi kojima je stalo. NORIE Studio nastao je upravo za njih — za brendove koji žele više od lijepog izgleda, za ljude koji žele stvoriti nešto što će trajati."
+      "Bavim se dizajnom godinama. Volim stvarati prostore koji pomažu ljudima da jasno vide ono što već osjećaju.",
+      "Život rijetko ide ravnom linijom. Postala sam majka, prošla kroz velike promjene i više puta krenula ispočetka. Zato dizajn ne promatram kao ukras — nego kao način da se nešto što je važno vrati u red i u glas.",
+      "Privlače me ljudi koji stvaraju nešto iskreno. Ljudi koji razmišljaju duboko. Ljudi kojima je stalo. NORIE Studio nastao je za njih — za brendove koji žele više od lijepog izgleda, za ljude koji žele stvoriti nešto što će trajati."
     ],
     "principles": [
       "Slušam prije nego što dizajniram.",
@@ -68,7 +69,7 @@
   },
   "contact": {
     "headline": "Ispričaj mi *svoju priču.*",
-    "intro": "Imaš projekt na umu ili samo ideju koja te svrbi? Javi se — odgovaram polako, ali s punom pažnjom.",
+    "intro": "Imaš projekt na umu ili samo misao koja ti se vraća? Javi se — odgovaram polako, ali s punom pažnjom.",
     "email": "studio@norie.studio",
     "responseTime": "Odgovor unutar 2 radna dana",
     "location": "Radim daljinski",
@@ -78,12 +79,12 @@
   },
   "cta": {
     "eyebrow": "Pridruži se iskri",
-    "heading": "Tvoj brend zaslužuje da diše.",
-    "text": "Primam mali broj projekata po sezoni. Javi se rano i osiguraj svoje mjesto."
+    "heading": "Tvoj brend zaslužuje da dobije svoj glas.",
+    "text": "Primam mali broj projekata po sezoni. Ako ti je do pravog, tišeg i promišljenog rada, javi se."
   },
   "footer": {
     "tagline": "NORIE Studio nastao je iz ljubavi prema dizajnu, pričama i ljudima iza njih.",
-    "journalText": "NORIE Journal istražuje unutarnji svijet. NORIE Studio oblikuje ono što iz njega nastaje.",
+    "journalText": "NORIE Journal istražuje tiho lice života. Ovdje pišem o onome što često ostane nečujno, ali ipak oblikuje sve.",
     "copyright": "© 2026 NORIE Studio · Sva prava pridržana."
   }
 }
